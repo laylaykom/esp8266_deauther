@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ESP8266 Deauther</title>
+		<meta name="description" content="Wi-Fi Deauthenticator">
+		<meta name="author" content="Spacehuhn - Stefan Kremser">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="js/functions.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<nav>
+			<a href="apscan.html">Erişim Noktaları</a>
+			<a href="stations.html">Ağlar</a>
+			<a href="attack.html">Saldırı</a>
+			<a href="settings.html">Ayarlar</a>
+			<a class="right" href="info.html">Bilgi</a>
+		</nav>
+		<div id="error"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="header">Saldırılar</h1>
+					
+					<p class="bold">Seçilen Erişim Noktası(ları):</p>
+					<ul id="selectedAPs">
+					</ul>
+					
+					<br />
+					
+					<p class="bold">Seçilen Ağ(lar):</p>
+					<ul id="selectedClients">
+					</ul>
+					
+					<br />
+					
+					<table>
+					</table>
+					
+					<p>
+						<span class="warn">BİLGİ: </span><span class="bold">Saldırı başladığında bağlantın kesilecek.</span><br />
+						Bunu önlemek için ayarlardaki kanalı aynı ağınki ile değiştirin.
+						<br />
+						<br />
+						<span class="bold">Deauth [deauthentication saldırı]:</span><br />
+						Seçili istasyon (lar) ve erişim noktalarına kimlik doğrulama ve ayrışma çerçeveleri gönderir..<br />
+						<br />
+						<span class="bold">Beacon [beacon flood]:</span><br />
+						Aşağıdaki listede SSID'leri olan sinyal lambaları gönderir.<br />
+						<br />
+						<span class="bold">Probe-Request [probe request flood]:</span><br />
+						Aşağıdaki listede SSID'leri olan arama isteği çerçeveleri gönderir.
+					</p>
+					<br />
+					<p class="left">SSID'ler: <span id="ssidCounter">0/48</span>
+					<div class="right">
+						<button class="button-warn" onclick="clearSSID()">temizle</button> 
+						<button onclick="randomSSID()">rastgele</button> 
+						<button onclick="cloneSSID(prompt('new SSID:'))">klon</button> 
+						<button class="button-primary" onclick="addSSID()">ekle</button></p>
+					</div>
+					<br />
+					<table></table>
+					<br />
+					<button class="marginNull button-warn" onclick="resetSSID()">sıfırla</button> 
+					<button class="marginNull button-primary right" onclick="saveSSID()">kaydet</button> 
+					<p class="small" id="saved">kaydedildi</p>
+					
+					<div id="copyright">
+						version 1.4<br />
+						Copyright (c) 2017 Stefan Kremser<br />
+						<a href="https://github.com/spacehuhn" target="_blank">github.com/spacehuhn</a><br />
+					</div>
+					
+					
+					<script src="js/attack.js"></script>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

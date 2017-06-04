@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ESP8266 Deauther</title>
+		<meta name="description" content="Wi-Fi Deauthenticator">
+		<meta name="author" content="Spacehuhn - Stefan Kremser">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="js/functions.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<nav>
+			<a href="apscan.html">Erişim Noktaları</a>
+			<a href="stations.html">Ağlar</a>
+			<a href="attack.html">Saldırı</a>
+			<a href="settings.html">Ayarlar</a>
+			<a class="right" href="info.html">Bilgi</a>
+		</nav>
+		<div id="error"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="header">Wi-Fi erişim noktalarını tara</h1>
+					
+					<a id="scanInfo">tarıyor...</a>
+					<button onclick="scan()" id="apScanStart" class="right button-primary">tara</button>
+					
+					<p>
+						Ağlar bulundu: 
+						<span id="networksFound">0</span>
+						<br />
+						MAC: <span id="apMAC"></span>
+					</p>
+					<br />
+				
+					<table></table>
+					
+					<p class="small">
+						WPA* = WPA/WPA2 otomatik mod
+					</p>
+					
+					<div id="copyright">
+						version 1.4<br />
+						Copyright (c) 2017 Stefan Kremser<br />
+						<a href="https://github.com/spacehuhn" target="_blank">github.com/spacehuhn</a><br />
+					</div>
+					
+					<script src="js/apscan.js"></script>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
